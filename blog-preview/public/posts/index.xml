@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 新新生活思維</title><link>https://slee39917-lab.github.io/Openclaw_AI_BOT/posts/</link><description>Recent content in Posts on 新新生活思維</description><generator>Hugo</generator><language>zh-tw</language><lastBuildDate>Mon, 06 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://slee39917-lab.github.io/Openclaw_AI_BOT/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>如何在部落格加入短影片</title><link>https://slee39917-lab.github.io/Openclaw_AI_BOT/posts/how-to-add-video/</link><pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate><guid>https://slee39917-lab.github.io/Openclaw_AI_BOT/posts/how-to-add-video/</guid><description>&lt;h2 id="影片嵌入教學">影片嵌入教學&lt;/h2>
+&lt;p>在部落格中加入影片超簡單！有兩種方式：&lt;/p>
+&lt;h3 id="方式一直接上傳-mp4-檔案">方式一：直接上傳 MP4 檔案&lt;/h3>
+&lt;p>把影片放到 &lt;code>static/videos/&lt;/code> 目錄，然後在文章中這樣寫：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">video&lt;/span> &lt;span style="color:#a6e22e">controls&lt;/span> &lt;span style="color:#a6e22e">width&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100%&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">source&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/videos/你的影片.mp4&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;video/mp4&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 你的瀏覽器不支援影片播放。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">video&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="方式二嵌入-youtube-影片">方式二：嵌入 YouTube 影片&lt;/h3>
+&lt;p>直接貼上 YouTube 連結，我會在後台幫你轉成嵌入代碼！&lt;/p>
+&lt;hr>
+&lt;blockquote>
+&lt;p>💡 小提醒：建議影片不要超過 5MB，否則載入會比較慢喔！&lt;/p>&lt;/blockquote></description></item><item><title>歡迎來到新新生活思維</title><link>https://slee39917-lab.github.io/Openclaw_AI_BOT/posts/welcome/</link><pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate><guid>https://slee39917-lab.github.io/Openclaw_AI_BOT/posts/welcome/</guid><description>&lt;h2 id="你好我是黎大哥">你好，我是黎大哥&lt;/h2>
+&lt;p>這裡是我的個人部落格，記錄生活中的點滴思考、發現與感悟。&lt;/p>
+&lt;h3 id="為什麼要開這個部落格">為什麼要開這個部落格？&lt;/h3>
+&lt;p>因為很多想法不寫下來，過幾天就忘了。與其存在腦海裡，不如寫成文字，既能整理思緒，也能分享给同樣感興趣的人。&lt;/p>
+&lt;h3 id="這裡會寫什麼">這裡會寫什麼？&lt;/h3>
+&lt;ul>
+&lt;li>🌱 &lt;strong>生活思維&lt;/strong> — 對日常事物的觀察與反思&lt;/li>
+&lt;li>📚 &lt;strong>閱讀筆記&lt;/strong> — 好書推薦與重點摘錄&lt;/li>
+&lt;li>💡 &lt;strong>實用技巧&lt;/strong> — 覺得有用的方法論分享&lt;/li>
+&lt;li>🎯 &lt;strong>目標追蹤&lt;/strong> — 個人成長的進程記錄&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>「每一天都是新的開始。」&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;p>感謝你的到來，我們文章見！&lt;/p></description></item></channel></rss>
