@@ -1,0 +1,32 @@
+{{ define "main" }}
+<header>
+  <nav>
+    <a href="{{ "" | absURL }}" class="logo">{{ .Site.Title }}</a>
+    <div class="menu">
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL | absURL }}">{{ .Name }}</a>
+      {{ end }}
+    </div>
+  </nav>
+</header>
+<main>
+  <article class="full-post">
+    <h1>{{ .Title }}</h1>
+    <time>{{ .Date.Format "2006-01-02" }}</time>
+    {{ if .Params.tags }}
+    <div class="tags">
+      {{ range .Params.tags }}
+      <span class="tag">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+    <div class="content">
+      {{ .Content }}
+    </div>
+    <p class="back-link"><a href="{{ "" | absURL }}">← 回到首頁</a></p>
+  </article>
+</main>
+<footer>
+  <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+</footer>
+{{ end }}
