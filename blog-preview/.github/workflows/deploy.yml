@@ -23,11 +23,16 @@ jobs:
           hugo-version: '0.147.4'
           extended: true
       - name: Build
-        run: hugo --minify
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        run: |
+          cd blog-preview
+          hugo --minify
+          # Copy built files to repo root for GitHub Pages
+          cp -r public/* ../
+          cp -r public/.* ../ 2>/dev/null || true
+      - name: Commit and push changes
+        run: |
+          git config user.name "slee39917-lab"
+          git config user.email "slee39917-lab@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Deploy: $(date +'%Y-%m-%d %H:%M')"
+          git push
