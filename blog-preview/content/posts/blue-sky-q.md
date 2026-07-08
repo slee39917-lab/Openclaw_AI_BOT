@@ -9,10 +9,10 @@ tags: ["生活", "隨筆"]
 
 ## 藍天白雲
 
-![藍天白雲](/images/blue-sky.jpg)
+![藍天白雲](/Openclaw_AI_BOT/images/blue-sky.jpg)
 
 ## Q版人相
 
-![Q版人相](/images/q-character.jpg)
+![Q版人相](/Openclaw_AI_BOT/images/q-character.jpg)
 
 喜歡的話按個讚吧！❤️
