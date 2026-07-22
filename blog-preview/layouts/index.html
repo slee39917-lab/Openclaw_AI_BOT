@@ -1,35 +1,49 @@
-{{ define "main" }}
-<header>
-  <nav>
-    <a href="{{ "" | absURL }}" class="logo">{{ .Site.Title }}</a>
-    <div class="menu">
-      {{ range .Site.Menus.main }}
-      <a href="{{ .URL | absURL }}">{{ .Name }}</a>
-      {{ end }}
-    </div>
-  </nav>
-</header>
-<main>
-  <section class="hero">
-    <h1>{{ .Site.Title }}</h1>
-    <p class="subtitle">{{ .Site.Params.description }}</p>
-  </section>
-  <section class="latest-posts">
-    <h2>最新文章</h2>
-    {{ range (where .Site.RegularPages "Type" "in" "posts").GroupByDate "2006" }}
-    <h3 style="margin-top: 1.5em;">{{ .Key }}</h3>
-    {{ range .Pages }}
-    <article class="post-card">
-      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-      <time>{{ .Date.Format "2006-01-02" }}</time>
-      <p>{{ .Summary | plainify | truncate 150 }}</p>
-      <p class="read-more"><a href="{{ .Permalink }}">點我 →</a></p>
-    </article>
-    {{ end }}
-    {{ end }}
-  </section>
-</main>
-<footer>
-  <p>&copy; {{ now.Year }} {{ .Site.Title }} — 由 Hugo 驅動，GitHub Pages 託管</p>
-</footer>
-{{ end }}
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.6; }
+        nav { background: #333; padding: 1rem; }
+        nav a { color: white; text-decoration: none; margin-right: 15px; }
+        .hero { text-align: center; padding: 50px 20px; background: #f4f4f4; }
+        .post-card { border: 1px solid #ddd; padding: 20px; margin: 10px 0; border-radius: 5px; }
+        .post-card h3 { margin-top: 0; }
+        footer { text-align: center; padding: 20px; margin-top: 50px; border-top: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ "" | absURL }}" class="logo">{{ .Site.Title }}</a>
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL | absURL }}">{{ .Name }}</a>
+        {{ end }}
+    </nav>
+
+    <section class="hero">
+        <h1>{{ .Site.Title }}</h1>
+        <p class="subtitle">{{ .Site.Params.description }}</p>
+    </section>
+
+    <section class="latest-posts">
+        <h2>最新文章</h2>
+        {{ range (where .Site.RegularPages "Type" "in" "posts").GroupByDate "2006" }}
+        <h3 style="margin-top: 1.5em;">{{ .Key }}</h3>
+        {{ range .Pages }}
+        <article class="post-card">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <time>{{ .Date.Format "2006-01-02" }}</time>
+            <p>{{ .Summary | plainify | truncate 150 }}</p>
+            <p class="read-more"><a href="{{ .Permalink }}">點我 →</a></p>
+        </article>
+        {{ end }}
+        {{ end }}
+    </section>
+
+    <footer>
+        <p>&copy; {{ now.Year }} {{ .Site.Title }} — 由 Hugo 驅動，GitHub Pages 託管</p>
+    </footer>
+</body>
+</html>
