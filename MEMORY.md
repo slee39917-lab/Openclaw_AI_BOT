@@ -18,21 +18,34 @@
 - `config.toml` 的 `pagination.pagerSize = 100`（所有文章顯示在同一頁，不分成多頁）
 - layouts/index.html 使用 `.GroupByDate` 分組 → 正確
 
-### 每次新增貼文的正確流程
-1. 寫好文章 → 存入 `content/posts/`（Hugo 來源 .md 檔）
-2. 手動更新 `public/index.html` → 把新文章卡片加進首頁清單
-3. git add + commit + push → GitHub Actions 自動跑 hugo --minify
-4. GitHub Pages CDN 自動更新（約 1-2 分鐘生效）
+### 每日新增貼文正確流程（2026-07-22 最終修正版）
+**工作流程：** blog-preview/ 目錄內操作，然後推到 GitHub root
+1. 在 `blog-preview/content/posts/` 建立 .md 檔案
+2. 確認 `blog-preview/layouts/_default/baseof.html` 存在 ✅
+3. 在 `blog-preview/` 執行 `hugo --minify`（本地測試）
+4. 本地驗證 post 頁面是否正確生成：
+   - `grep -c 'class=post-card' blog-preview/public/index.html` （應該 = 文章數）
+   - `wc -c blog-preview/public/posts/<slug>/index.html` （應該 > 5000 bytes）
+5. 在 workspace 根目錄執行：`git add -A && git commit -m "new post: <標題>" && git push`
+6. GitHub Actions 自動跑 `hugo --minify` + `cp -rf blog-preview/public/* ./` + 重新 commit + push
+7. GitHub Pages CDN 自動更新（約 1-3 分鐘）
+8. 最終驗證：
+   - `curl -s https://raw.githubusercontent.com/slee39917-lab/Openclaw_AI_BOT/main/index.html | grep -c 'class=post-card'`
+   - `curl -s -o /dev/null -w "%{http_code}" https://slee39917-lab.github.io/Openclaw_AI_BOT/posts/<slug>/`
+   - 首頁文章數應為 26（27 content files - 1 about page = 26）
 
-### 常見錯誤
-- ❌ 只改 pagerSize 不夠！GitHub Actions 每次 hugo 會重新生成 index.html，如果 pagerSize 設太小（如 20），首頁就會被覆蓋回只有幾篇
-- ❌ 不能只把 .md 放 content/posts/，必須同步更新 public/index.html 的首頁卡片
-- ❌ root 目錄的 index.html 會被 Hugo 覆蓋，所以要確保 pagerSize > 總文章數
+**重要注意事項：**
+- GitHub Actions workflow 已修復啟用（2026-07-22），使用 Hugo 0.111.3
+- baseof.html 是必要模板，single.html 使用 {{ define "main" }} 需要它包套，否則所有 post 頁面會空
+- pagerSize = 100 保證所有文章在同一頁顯示
+- deploy commit 會再次觸發 workflow，但不會無限循環（GitHub 去重機制）
+- 手動在 workspace root 放了 index.html 後，下次 push 會被 GitHub Actions 覆蓋（正常行為）
 
 ### 驗證步驟
-- 本地確認：`grep -c "post-card" public/index.html`
-- GitHub 確認：`curl -s https://raw.githubusercontent.com/slee39917-lab/Openclaw_AI_BOT/main/index.html | grep -c "post-card"`
-- 兩邊數字一致才算成功
+- 本地確認：`grep -c 'class=post-card' blog-preview/public/index.html`
+- GitHub 確認：`curl -s https://raw.githubusercontent.com/slee39917-lab/Openclaw_AI_BOT/main/index.html | grep -c 'class=post-card'`
+- 直播檢查：`curl -s -o /dev/null -w "%{http_code}" https://slee39917-lab.github.io/Openclaw_AI_BOT/posts/<slug>/`
+- 本地與 GitHub 卡片數一致才算成功
 
 ## Notion Integration
 - **Token:** `ntn_27…z2b1`
