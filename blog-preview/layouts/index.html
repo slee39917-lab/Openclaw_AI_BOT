@@ -16,7 +16,7 @@
   </section>
   <section class="latest-posts">
     <h2>最新文章</h2>
-    {{ range (.Paginate (where .Site.RegularPages "Type" "in" "posts") 5).Pages }}
+    {{ range (.Paginate (where .Site.RegularPages "Type" "in" "posts") 20).Pages }}
     <article class="post-card">
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <time>{{ .Date.Format "2006-01-02" }}</time>
