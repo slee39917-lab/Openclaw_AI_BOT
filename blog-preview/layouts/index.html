@@ -16,7 +16,9 @@
   </section>
   <section class="latest-posts">
     <h2>最新文章</h2>
-    {{ range (.Paginate (where .Site.RegularPages "Type" "in" "posts") 20).Pages }}
+    {{ range (where .Site.RegularPages "Type" "in" "posts").GroupByDate "2006" }}
+    <h3 style="margin-top: 1.5em;">{{ .Key }}</h3>
+    {{ range .Pages }}
     <article class="post-card">
       <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       <time>{{ .Date.Format "2006-01-02" }}</time>
@@ -24,19 +26,6 @@
       <p class="read-more"><a href="{{ .Permalink }}">點我 →</a></p>
     </article>
     {{ end }}
-    {{ if .Paginator }}
-    <div class="pagination">
-      {{ if .Paginator.HasPrev }}
-      <a href="{{ .Paginator.Prev.URL }}">← 上一頁</a>
-      {{ else }}
-      <span></span>
-      {{ end }}
-      {{ if .Paginator.HasNext }}
-      <a href="{{ .Paginator.Next.URL }}">下一頁 →</a>
-      {{ else }}
-      <span></span>
-      {{ end }}
-    </div>
     {{ end }}
   </section>
 </main>
