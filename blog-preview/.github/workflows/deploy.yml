@@ -27,8 +27,9 @@ jobs:
           cd blog-preview
           hugo --minify
           # Copy built files to repo root for GitHub Pages
-          cp -r public/* ../
-          cp -r public/.* ../ 2>/dev/null || true
+          cp -rf public/* ../
+          rm -f ../index.html
+cp public/index.html ../index.html
       - name: Commit and push changes
         run: |
           git config user.name "slee39917-lab"
