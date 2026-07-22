@@ -2,7 +2,7 @@ baseURL = "https://slee39917-lab.github.io/Openclaw_AI_BOT/"
 languageCode = "zh-tw"
 title = "新新生活思維"
 defaultContentLanguage = "zh-tw"
-pagination.pagerSize = 20
+pagination.pagerSize = 100
 [params]
   description = "黎四弘的生活隨筆、思考與發現"
 [markup]
