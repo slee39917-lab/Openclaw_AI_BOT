@@ -1,40 +1,48 @@
-name: Deploy Hugo site to GitHub Pages
+name: Build and Deploy Hugo Site
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.111.3'
+          hugo-version: "0.111.3"
           extended: true
 
       - name: Build
-        run: |
-          cd blog-preview
-          hugo --minify
-
-      - name: Copy to root
-        run: |
-          cp -rf blog-preview/public/* ./
+        working-directory: blog-preview
+        run: hugo --minify
 
       - name: Deploy
+        working-directory: blog-preview
         run: |
+          # Copy generated public site to repo root
+          cp -rf public/* ../
+
+          # Git setup
+          cd ..
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Force add everything to staging
           git add -A
-          git diff --quiet && git diff --staged --quiet || git commit -m "deploy: hugo build $(date +%Y-%m-%d)"
-          git push
+
+          # Commit if there are changes
+          if ! git diff --cached --quiet; then
+            git commit -m "deploy: auto-build Hugo site [skip ci]"
+            git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
+          fi
