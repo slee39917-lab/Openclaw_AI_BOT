@@ -30,19 +30,26 @@ jobs:
       - name: Deploy
         working-directory: blog-preview
         run: |
-          # Copy generated public site to repo root
-          cp -rf public/* ../
-
+          # Clean old posts directory
+          rm -rf ../../posts/
+          
+          # Copy generated site files to repo root
+          cp -rf public/* ../../
+          
+          # Remove the old public directory
+          rm -rf public/
+          
           # Git setup
           cd ..
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Force add everything to staging
+          # Add all changes
           git add -A
 
-          # Commit if there are changes
+          # Check if there are any changes before committing
           if ! git diff --cached --quiet; then
             git commit -m "deploy: auto-build Hugo site [skip ci]"
-            git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
+            # Force push to ensure deployment
+            git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
           fi
