@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新新生活思維 - 文章詳情</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">新新生活思維</a></h1>
+    <p>黎四弘的生活隨筆、思考與發現</p>
+  </header>
+  <div class="container">
+    <nav>
+      <a href="index.html">首頁</a>
+      <a href="about.html">關於</a>
+    </nav>
+    <main>
+      <article class="post-content">
+        <h2 id="post-title">文章標題</h2>
+        <time id="post-date">2026-07-31</time>
+        <div id="post-body">
+          <p>文章內容</p>
+        </div>
+        <a href="index.html" class="back-link">← 返回首頁</a>
+      </article>
+    </main>
+  </div>
+  <footer>
+    <p>© 2026 新新生活思維</p>
+  </footer>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const posts = [{"id":1,"title":"你好，世界！","date":"2026-07-31","content":"这是我的第一篇部落格文章。欢迎来到我的个人空间！"}];
+    const post = posts.find(p => p.id == id);
+    if (post) {
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('post-date').textContent = post.date;
+      document.getElementById('post-body').innerHTML = post.content.split('\n').map(p => `<p>${p}</p>`).join('');
+      document.title = `${post.title} - 新新生活思維`;
+    } else {
+      document.querySelector('main').innerHTML = '<p>文章不存在</p><a href="index.html">返回首頁</a>';
+    }
+  </script>
+</body>
+</html>

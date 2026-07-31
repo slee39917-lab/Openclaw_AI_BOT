@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 a {
+  color: #333;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+header p {
+  color: #666;
+  margin-top: 10px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav {
+  background: #333;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #f0a500;
+}
+
+.post-card {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post-card h3 a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.post-card h3 a:hover {
+  color: #f0a500;
+}
+
+.post-card time {
+  color: #888;
+  font-size: 0.9em;
+  display: block;
+  margin: 10px 0;
+}
+
+.post-card p {
+  margin: 15px 0;
+  color: #555;
+}
+
+.read-more, .back-link {
+  color: #f0a500;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.read-more:hover, .back-link:hover {
+  text-decoration: underline;
+}
+
+.post-content h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.post-content time {
+  color: #888;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.post-content div p {
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888;
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+}
