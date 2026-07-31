@@ -38,18 +38,3 @@ jobs:
           
           # Remove the old public directory
           rm -rf public/
-          
-          # Git setup
-          cd ..
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Add all changes
-          git add -A
-
-          # Check if there are any changes before committing
-          if ! git diff --cached --quiet; then
-            git commit -m "deploy: auto-build Hugo site [skip ci]"
-            # Force push to ensure deployment
-            git push --force https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
-          fi
