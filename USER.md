@@ -2,11 +2,11 @@
 
 _Learn about the person you're helping. Update this as you go._
 
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+- **Name:** 黎大哥 (Steve Li)
+- **What to call them:** 黎大哥
+- **Pronouns:** he/him
+- **Timezone:** Asia/Taipei (UTC+8)
+- **Notes:** 喜歡寫作、部落格管理、技術專案。對生活美學、職涯成長有興趣。養了一隻狐狸🦊
 
 ## Context
 

@@ -1,0 +1,240 @@
+{
+  "children": [
+    {
+      "object": "block",
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "📰 本週精選文章" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "身心靈與職場：如何打造能量平衡的工作狀態",
+              "link": { "url": "https://weplaylife.tw/work-life-balance-tips/" }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "🎯 日常痛點" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "下班後仍放不下工作焦慮" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "開會時心不在焉、效率低落" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "工作與生活界線模糊" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "長時間久坐、忘記喝水吃飯" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "🧬 核心成因" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "身體、心理、情緒三者失衡" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "bulleted_list_item",
+      "bulleted_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "壓力長期累積未釋放形成能量黑洞" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "💡 行動提案" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "建立下班儀式：關掉電腦、整理桌面，設定結束工作的儀式" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "呼吸練習：吸氣4秒→保持4秒→呼氣6秒，每天三次每次兩分鐘" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "打造能量友善環境：乾淨桌面、小植物、良好燈光" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "每小時起身伸展3分鐘，避免久坐透支" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "感恩練習：每天記錄三件值得感恩的小事" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_2",
+      "heading_2": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "🔄 思維轉變總結" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "quote",
+      "quote": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "職場不是消耗場，而是能量場；關鍵在每天選擇讓能量持續流動。" }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "divider",
+      "divider": {}
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": { "content": "🦊 本週生活思維圖鑑已完成拆解！" }
+          }
+        ]
+      }
+    }
+  ]
+}
