@@ -41,7 +41,7 @@
       // 處理內容：純文字段落用 <p> 包起來，HTML 元素保持原樣
       const content = post.content.split('\n').map(line => {
         if (line.trim() === '') return '<br>';
-        if (line.includes('<iframe') || line.includes('<img') || line.includes('<video')) return line;
+        if (line.includes('<iframe') || line.includes('<img') || line.includes('<video') || line.includes('<a ')) return line;
         return `<p>${line}</p>`;
       }).join('');
       document.getElementById('post-body').innerHTML = content;
