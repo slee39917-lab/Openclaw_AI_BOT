@@ -8,8 +8,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background: #f5f5f5;
   color: #333;
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.8;
+  font-size: 17px;
 }
 
 header {
@@ -23,12 +23,13 @@ header {
 header h1 a {
   color: #333;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 2.2em;
 }
 
 header p {
   color: #666;
   margin-top: 10px;
+  font-size: 1.1em;
 }
 
 .container {
@@ -49,6 +50,7 @@ nav a {
   text-decoration: none;
   margin-right: 20px;
   font-weight: 500;
+  font-size: 1.05em;
 }
 
 nav a:hover {
@@ -66,7 +68,7 @@ nav a:hover {
 .post-card h3 a {
   color: #333;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 
 .post-card h3 a:hover {
@@ -75,7 +77,7 @@ nav a:hover {
 
 .post-card time {
   color: #888;
-  font-size: 0.9em;
+  font-size: 1em;
   display: block;
   margin: 10px 0;
 }
@@ -83,53 +85,80 @@ nav a:hover {
 .post-card p {
   margin: 15px 0;
   color: #555;
+  font-size: 1.1em;
 }
 
 .read-more, .back-link {
   color: #f0a500;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1.05em;
 }
 
 .read-more:hover, .back-link:hover {
   text-decoration: underline;
 }
 
-.post-content h1,
+.post-content h1 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
 .post-content h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 1.8em;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 .post-content time {
   color: #888;
   display: block;
   margin-bottom: 30px;
+  font-size: 1em;
 }
 
 .post-content {
   font-size: 1.15em;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .post-content p {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
+  line-height: 1.9;
 }
 
 .post-content blockquote {
   margin: 1.5em 0;
-  padding: 0.5em 1em;
+  padding: 0.8em 1.2em;
   background: #f9f6f0;
   border-left: 4px solid #e0d5c8;
   border-radius: 0 8px 8px 0;
+  font-size: 1.08em;
+  line-height: 1.8;
 }
 
 .post-content strong {
   font-weight: 700;
 }
 
-.post-content div {
-  margin-bottom: 15px;
+.post-content div.date {
+  color: #888;
+  font-size: 1em;
+  margin-bottom: 25px;
+}
+
+.post-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.post-content .highlight {
+  background: #fff8e7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 1.05em;
 }
 
 footer {
@@ -138,4 +167,5 @@ footer {
   color: #888;
   margin-top: 50px;
   border-top: 1px solid #ddd;
+  font-size: 0.95em;
 }
