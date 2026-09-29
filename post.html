@@ -20,46 +20,164 @@
       <article class="post-content">
         <h2 id="post-title">載入中...</h2>
         <time id="post-date"></time>
+        <p id="reading-time" class="reading-time"></p>
         <div id="post-body">
           <p>載入中...</p>
         </div>
         <a href="index.html" class="back-link">← 返回首頁</a>
       </article>
+      <section id="related" class="related" hidden>
+        <h3>你可能也會喜歡</h3>
+        <ul id="related-list" class="related-list"></ul>
+      </section>
+      <nav id="post-nav" class="post-nav" aria-label="文章導覽"></nav>
     </main>
   </div>
   <footer>
     <p>© 2026 新新生活思維</p>
   </footer>
   <script>
-    (async () => {
+    (function () {
       const params = new URLSearchParams(window.location.search);
       const id = params.get('id');
       if (!id) {
         document.querySelector('main').innerHTML = '<p>請選擇文章</p><a href="index.html">返回首頁</a>';
         return;
       }
-      try {
-        const res = await fetch('posts.json');
-        if (!res.ok) throw new Error('無法載入 posts.json');
-        const posts = await res.json();
-        const post = posts.find(p => p.id == id);
-        if (!post) {
-          document.querySelector('main').innerHTML = '<p>文章不存在</p><a href="index.html">返回首頁</a>';
-          return;
-        }
-        document.getElementById('post-title').textContent = post.title;
-        document.getElementById('post-date').textContent = post.date;
-        document.title = `${post.title} - 新新生活思維`;
-        // 處理內容：純文字段落用 <p> 包起來，HTML 元素保持原樣
-        const content = post.content.split('\n').map(line => {
+
+      // ---- 小工具 ----
+      function escapeHtml(s) {
+        return String(s == null ? '' : s)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      }
+      function stripHtml(html) {
+        if (!html) return '';
+        return String(html)
+          .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+          .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+          .replace(/<br\s*\/?>/gi, ' ')
+          .replace(/<[^>]+>/g, ' ')
+          .replace(/&[a-z#0-9x]+;/gi, ' ')
+          .replace(/\s+/g, ' ').trim();
+      }
+      // 內容：純文字段落用 <p> 包起來，HTML 元素保持原樣（與原本一致）
+      function renderContent(content) {
+        return content.split('\n').map(line => {
           if (line.trim() === '') return '<br>';
           if (line.includes('<iframe') || line.includes('<img') || line.includes('<video') || line.includes('<a ')) return line;
           return `<p>${line}</p>`;
         }).join('');
-        document.getElementById('post-body').innerHTML = content;
-      } catch (e) {
-        document.querySelector('main').innerHTML = `<p>載入文章時出錯：${e.message}</p><a href="index.html">返回首頁</a>`;
       }
+
+      // ---- 相關文章：以 tags 為主，關鍵字相似度為輔 ----
+      // 關鍵字集：英文單字 + 中文 2-gram
+      function keywordSet(post) {
+        const text = stripHtml(post.content) + ' ' + (post.title || '');
+        const set = new Set();
+        (text.match(/[A-Za-z0-9]{2,}/g) || []).forEach(w => set.add(w.toLowerCase()));
+        const cjk = (text.match(/[\u4e00-\u9fff]/g) || []).join('');
+        for (let i = 0; i < cjk.length - 1; i++) set.add(cjk.slice(i, i + 2));
+        return set;
+      }
+      function jaccard(a, b) {
+        if (!a.size || !b.size) return 0;
+        let inter = 0;
+        a.forEach(x => { if (b.has(x)) inter++; });
+        return inter / (a.size + b.size - inter);
+      }
+      function relatedPosts(current, ordered) {
+        const curTags = new Set(current.tags || []);
+        const curKw = keywordSet(current);
+        const scored = ordered
+          .filter(p => p.id !== current.id)
+          .map(p => ({
+            p,
+            tag: (p.tags || []).filter(t => curTags.has(t)).length,
+            sim: jaccard(keywordSet(p), curKw)
+          }));
+        // 第一優先是相同 tags（tag 多者在前），其次關鍵字相似度，最後以 id 穩定排序
+        scored.sort((a, b) => b.tag - a.tag || b.sim - a.sim || b.p.id - a.p.id);
+        return scored.slice(0, 3).map(x => x.p);
+      }
+
+      // ---- 閱讀進度條（固定在視窗最上方細線，不遮住內容）----
+      function initProgress() {
+        const bar = document.createElement('div');
+        bar.className = 'progress-bar';
+        bar.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(bar);
+        function update() {
+          const doc = document.documentElement;
+          const scrollTop = window.pageYOffset || doc.scrollTop || document.body.scrollTop || 0;
+          const docH = Math.max(doc.scrollHeight, document.body.scrollHeight);
+          const winH = window.innerHeight || doc.clientHeight;
+          const max = docH - winH;
+          const pct = max > 0 ? Math.min(100, Math.max(0, (scrollTop / max) * 100)) : 100;
+          bar.style.width = pct + '%';
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+      }
+
+      (async () => {
+        try {
+          const res = await fetch('posts.json');
+          if (!res.ok) throw new Error('無法載入 posts.json');
+          const posts = await res.json();
+          const post = posts.find(p => p.id == id);
+          if (!post) {
+            document.querySelector('main').innerHTML = '<p>文章不存在</p><a href="index.html">返回首頁</a>';
+            return;
+          }
+          document.getElementById('post-title').textContent = post.title;
+          document.getElementById('post-date').textContent = post.date;
+          document.title = `${post.title} - 新新生活思維`;
+          document.getElementById('post-body').innerHTML = renderContent(post.content);
+
+          // 預估閱讀時間（中文約 400 字／分鐘，至少 1 分鐘）
+          const chars = stripHtml(post.content).replace(/\s/g, '').length;
+          const minutes = Math.max(1, Math.round(chars / 400));
+          const rtEl = document.getElementById('reading-time');
+          if (rtEl) rtEl.textContent = `預估閱讀時間：約 ${minutes} 分鐘`;
+
+          // 依 id 由大到小排序（與首頁一致）
+          const ordered = posts.slice().sort((a, b) => Number(b.id) - Number(a.id));
+          const i = ordered.findIndex(p => p.id == post.id);
+          const newer = i > 0 ? ordered[i - 1] : null;                  // 上一篇（較新）
+          const older = i < ordered.length - 1 ? ordered[i + 1] : null; // 下一篇（較舊）
+
+          // ---- 上一篇 / 下一篇 ----
+          const nav = document.getElementById('post-nav');
+          if (nav) {
+            const prevHtml = newer
+              ? `<a class="nav-link nav-prev" href="post.html?id=${newer.id}"><span class="nav-label">← 上一篇</span><span class="nav-title">${escapeHtml(newer.title)}</span></a>`
+              : '<span class="nav-side-empty"></span>';
+            const nextHtml = older
+              ? `<a class="nav-link nav-next" href="post.html?id=${older.id}"><span class="nav-label">下一篇 →</span><span class="nav-title">${escapeHtml(older.title)}</span></a>`
+              : '<span class="nav-side-empty"></span>';
+            nav.innerHTML = prevHtml + nextHtml;
+          }
+
+          // ---- 相關文章 ----
+          const relSec = document.getElementById('related');
+          const relList = document.getElementById('related-list');
+          if (relSec && relList) {
+            const rel = relatedPosts(post, ordered);
+            if (rel.length) {
+              relList.innerHTML = rel.map(p =>
+                `<li><a href="post.html?id=${p.id}"><span class="rel-title">${escapeHtml(p.title)}</span><time class="rel-date">${escapeHtml(p.date)}</time></a></li>`
+              ).join('');
+              relSec.hidden = false;
+            }
+          }
+
+          initProgress();
+        } catch (e) {
+          document.querySelector('main').innerHTML = `<p>載入文章時出錯：${escapeHtml(e.message)}</p><a href="index.html">返回首頁</a>`;
+        }
+      })();
     })();
   </script>
 </body>

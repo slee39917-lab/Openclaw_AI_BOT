@@ -268,3 +268,125 @@ footer {
   .search-box { padding: 14px; }
   .tag-btn { padding: 10px 14px; font-size: 0.92em; }
 }
+
+/* ===== 第三階段：閱讀進度、閱讀時間、上一篇/下一篇、相關文章 ===== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: #f0a500;
+  z-index: 9999;
+}
+
+.reading-time {
+  color: #888;
+  font-size: 0.92em;
+  margin: -16px 0 26px;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 30px 0 10px;
+}
+
+.post-nav .nav-link {
+  display: flex;
+  flex-direction: column;
+  max-width: 48%;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: #333;
+}
+
+.post-nav .nav-next {
+  text-align: right;
+  margin-left: auto;
+}
+
+.post-nav .nav-label {
+  color: #f0a500;
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+
+.post-nav .nav-title {
+  font-size: 0.98em;
+  line-height: 1.5;
+}
+
+.post-nav .nav-link:hover .nav-title {
+  color: #f0a500;
+}
+
+.post-nav .nav-side-empty {
+  display: block;
+  max-width: 48%;
+}
+
+.related {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.related h3 {
+  font-size: 1.25em;
+  margin-bottom: 14px;
+  color: #333;
+}
+
+.related-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.related-list li {
+  border-top: 1px solid #eee;
+}
+
+.related-list li:first-child {
+  border-top: none;
+}
+
+.related-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 12px 2px;
+  text-decoration: none;
+  color: #333;
+}
+
+.related-list a:hover .rel-title {
+  color: #f0a500;
+}
+
+.related-list .rel-title {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.related-list .rel-date {
+  color: #999;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .post-nav { flex-direction: column; }
+  .post-nav .nav-link,
+  .post-nav .nav-side-empty { max-width: 100%; }
+  .post-nav .nav-next { text-align: left; margin-left: 0; }
+  .related-list a { flex-direction: column; align-items: flex-start; gap: 2px; }
+}
