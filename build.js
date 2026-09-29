@@ -67,20 +67,28 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;');
 }
 
-/** 產生單一文章卡片 HTML（格式與原本首頁一致） */
+/** 產生單一文章卡片 HTML（格式與原本首頁一致，並加上 data-id / data-tags 供搜尋與標籤篩選使用） */
 function renderCard(post) {
   const id = post.id;
   const title = escapeHtml(post.title);
   const date = escapeHtml(post.date);
   const summary = escapeHtml(makeSummary(post.content));
+  const tags = Array.isArray(post.tags) ? post.tags : [];
+  const tagsAttr = escapeHtml(tags.join(','));
+  const chips = tags
+    .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
+    .join('');
   return [
-    '      <article class="post-card">',
+    `      <article class="post-card" data-id="${id}" data-tags="${tagsAttr}">`,
     `        <h3><a href="post.html?id=${id}">${title}</a></h3>`,
     `        <time>${date}</time>`,
     `        <p>${summary}</p>`,
+    chips ? `        <div class="post-tags">${chips}</div>` : '',
     `        <a href="post.html?id=${id}" class="read-more">閱讀更多 →</a>`,
     '      </article>'
-  ].join('\n');
+  ]
+    .filter(Boolean)
+    .join('\n');
 }
 
 function main() {

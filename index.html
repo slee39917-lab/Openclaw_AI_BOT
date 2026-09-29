@@ -17,168 +17,201 @@
       <a href="about.html">關於</a>
     </nav>
     <main>
+      <section class="search-box" aria-label="文章搜尋與分類">
+        <input id="search-input" type="search" placeholder="🔎 搜尋文章（標題／日期／內容／標籤）" autocomplete="off" aria-label="搜尋文章">
+        <div id="tag-bar" class="tag-bar" role="group" aria-label="標籤篩選"></div>
+        <p id="result-count" class="result-count"></p>
+        <p id="empty-state" class="empty-state" hidden>找不到符合的文章，換個關鍵字或標籤試試看 🦊</p>
+      </section>
       <h2>最新文章</h2>
       <!-- POSTS:START -->
-      <article class="post-card">
+      <article class="post-card" data-id="27" data-tags="AI 與科技,退休生活">
         <h3><a href="post.html?id=27">生活雜記：退休後，我多了幾個 AI 助手</a></h3>
         <time>2026-09-28</time>
         <p>最近早上的時間，我常常坐到電腦前面，打開 AI，準備寫部落格。 寫著寫著，突然想到：「乾脆叫 AI 幫我找找最近有什麼新工具好了。」 結果一查不得了，AI Ag…</p>
+        <div class="post-tags"><span class="tag">AI 與科技</span><span class="tag">退休生活</span></div>
         <a href="post.html?id=27" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="26" data-tags="退休生活">
         <h3><a href="post.html?id=26">生活雜記：運動很會騙人，但五年後會知道</a></h3>
         <time>2026-09-24</time>
         <p>這幾天吃完晚飯，我都把碗筷收一收，換雙好走路的鞋，出門繞一圈。 其實也沒什麼目的。 吃飽坐在沙發上滑手機，覺得肚子有點撐，想說還是出去走走好了。 走到巷口，遇到…</p>
+        <div class="post-tags"><span class="tag">退休生活</span></div>
         <a href="post.html?id=26" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="25" data-tags="退休生活,人生覺察">
         <h3><a href="post.html?id=25">生活雜記：慢一點，不代表人生停了</a></h3>
         <time>2026-09-23</time>
         <p>現在早上起床，我常常沒有急著下床。 以前鬧鐘一響，整個人就像被踢下床，刷牙、換衣服、趕車，腦袋裡還盤算今天有多少事情要做。 現在退休了，鬧鐘反而沒那麼重要。 有…</p>
+        <div class="post-tags"><span class="tag">退休生活</span><span class="tag">人生覺察</span></div>
         <a href="post.html?id=25" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="24" data-tags="人生覺察">
         <h3><a href="post.html?id=24">生活雜記：低眉不是認輸</a></h3>
         <time>2026-09-22</time>
         <p>前幾天去黃昏市場，排在前面的一位阿桑，跟攤販為了幾塊錢講了好幾分鐘。 我們站在後面等，一開始有點不耐煩，後來突然覺得好笑。 想起以前的我，大概也差不多。 遇到一…</p>
+        <div class="post-tags"><span class="tag">人生覺察</span></div>
         <a href="post.html?id=24" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="23" data-tags="人生覺察">
         <h3><a href="post.html?id=23">生活雜記：生活裡少了一樣東西——期待</a></h3>
         <time>2026-09-10</time>
         <p>前幾天，我和一個朋友一起喝咖啡。 以前的他很會安排生活。看到新開的店會說：「改天去吃看看。」聽說哪裡風景不錯，就會開始查路線。 那天我問他： 「最近有沒有想去哪…</p>
+        <div class="post-tags"><span class="tag">人生覺察</span></div>
         <a href="post.html?id=23" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="22" data-tags="家庭與人際">
         <h3><a href="post.html?id=22">生活杂记：一家人，知道彼此都平顺就很好了</a></h3>
         <time>2026-09-09</time>
         <p>前幾天晚上，我在客廳泡了一壺茶，家人有的坐沙發、有的滑手機，電視開著，卻沒什麼人在看。 以前的我看到這種情形，大概會忍不住說： 「一家人坐在一起，怎麼每個人都各…</p>
+        <div class="post-tags"><span class="tag">家庭與人際</span></div>
         <a href="post.html?id=22" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="21" data-tags="人生覺察,家庭與人際">
         <h3><a href="post.html?id=21">生活雜記：有些路，真的不用自己孤單的一個人走</a></h3>
         <time>2026-09-08</time>
         <p>前幾天有一點事情，自己坐在窗邊喝茶，想了很久。 第一個念頭還是老樣子： 「算了，我自己處理就好。」 這句話，我以前很常講。 以前總覺得大人的事情自己扛，才叫有本…</p>
+        <div class="post-tags"><span class="tag">人生覺察</span><span class="tag">家庭與人際</span></div>
         <a href="post.html?id=21" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="20" data-tags="職場與社會">
         <h3><a href="post.html?id=20">生活雜記：現在上班，連被罵都要有法律保護了</a></h3>
         <time>2026-09-07</time>
         <p>生活雜記：現在上班，連被罵都要有法律保護了 新新生活思維 | 2026-09-07 前幾天一個朋友說： 「你知道嗎？現在主管罵人，搞不好要小心一點了。」 我笑了…</p>
+        <div class="post-tags"><span class="tag">職場與社會</span></div>
         <a href="post.html?id=20" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="19" data-tags="人生覺察">
         <h3><a href="post.html?id=19">生活雜記：放下「我對」，心就輕鬆了</a></h3>
         <time>2026-09-06</time>
         <p>生活雜記：放下「我對」，心就輕鬆了 新新生活思維 | 2026-09-06 前幾天吃完晚飯，我跟家人聊到一件小事。 大家想法不太一樣，我一開始還講得很有道理，心…</p>
+        <div class="post-tags"><span class="tag">人生覺察</span></div>
         <a href="post.html?id=19" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="18" data-tags="人生覺察,生活與旅行">
         <h3><a href="post.html?id=18">連下幾天雨，我才發現自己真的慢下來了</a></h3>
         <time>2026-09-01</time>
         <p>連下幾天雨，我才發現自己真的慢下來了 新新生活思維 | 2026-09-01 已經連續幾天都在下雨。 早上拉開窗簾，外面灰濛濛的，我第一個念頭竟然是：「今天又不…</p>
+        <div class="post-tags"><span class="tag">人生覺察</span><span class="tag">生活與旅行</span></div>
         <a href="post.html?id=18" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="17" data-tags="AI 與科技,職場與社會">
         <h3><a href="post.html?id=17">你害怕AI搶工作嗎？</a></h3>
         <time>2026-08-31</time>
         <p>你害怕 AI 搶工作嗎？ 新新生活思維 | 2026-08-31 以前怕 AI 搶工作，現在我更在意它能不能幫我過生活。 前幾天坐在家裡，拿手機叫 AI 幫我整…</p>
+        <div class="post-tags"><span class="tag">AI 與科技</span><span class="tag">職場與社會</span></div>
         <a href="post.html?id=17" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="16" data-tags="生活與旅行">
         <h3><a href="post.html?id=16">區間車的雨景</a></h3>
         <time>2026-08-19</time>
         <p>今天搭區間車回家，一路上晃晃悠悠，窗外的街景一個接一個閃過。車上的人不多，我找了個靠窗的位置坐下，聽著鐵軌的震震隆隆，感覺整個人都放鬆了下來。這種鬆泛的感覺，讓…</p>
+        <div class="post-tags"><span class="tag">生活與旅行</span></div>
         <a href="post.html?id=16" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="15" data-tags="家庭與人際,職場與社會">
         <h3><a href="post.html?id=15">50歲生日，她用一顆星結束25年婚姻</a></h3>
         <time>2026-08-16</time>
         <p>這幾天最熱鬧的新聞不是颱風，而是陳水扁的女兒陳幸妤——用一顆 Google 星星，結束了 25 年婚姻。 8 月 12 日她 50 歲生日當天，沒辦壽宴、沒發限…</p>
+        <div class="post-tags"><span class="tag">家庭與人際</span><span class="tag">職場與社會</span></div>
         <a href="post.html?id=15" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="14" data-tags="人生覺察,生活與旅行">
         <h3><a href="post.html?id=14">他們趕路，我散步</a></h3>
         <time>2026-08-12</time>
         <p>傍晚買完日用品，提著兩袋站在路邊等紅綠燈。機車一台台從身邊鑽過去，外送員趕著送餐，公車進站，下車的人低著頭滑手機。對面車道，下班車陣排成長長一條，車燈紅紅白白。…</p>
+        <div class="post-tags"><span class="tag">人生覺察</span><span class="tag">生活與旅行</span></div>
         <a href="post.html?id=14" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="13" data-tags="退休生活,家庭與人際">
         <h3><a href="post.html?id=13">兩人世界，也能過得溫暖</a></h3>
         <time>2026-08-12</time>
         <p>老了以後，兩老互相照顧，沒有兒孫，怎麼辦？其實不用怕，日子可以過得很溫暖。早上一起泡壺茶，牽手去市場買菜，和巷口的老鄰居話家常，這就是幸福。交通有敬老卡，坐公車…</p>
+        <div class="post-tags"><span class="tag">退休生活</span><span class="tag">家庭與人際</span></div>
         <a href="post.html?id=13" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="12" data-tags="生活與旅行">
         <h3><a href="post.html?id=12">東海大學一遊</a></h3>
         <time>2026-08-11</time>
         <p>分享一個很好的影片給大家： 📺 點擊觀看完整影片 一起來逛逛美麗的東海大學校園，感受校園的悠閒氛圍與人文氣息。</p>
+        <div class="post-tags"><span class="tag">生活與旅行</span></div>
         <a href="post.html?id=12" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="11" data-tags="退休生活,人生覺察">
         <h3><a href="post.html?id=11">退休後，放下比較心</a></h3>
         <time>2026-08-08</time>
         <p>退休後啊，很多人以為終於可以「放鬆」了，結果反而更焦慮：每天沒事做會不會被看不起？孩子不常聯絡是不是我不夠好？朋友都在旅遊打卡，我怎麼好像落後了？其實最累的，常…</p>
+        <div class="post-tags"><span class="tag">退休生活</span><span class="tag">人生覺察</span></div>
         <a href="post.html?id=11" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="10" data-tags="生活與旅行">
         <h3><a href="post.html?id=10">黃昏市場的小確幸</a></h3>
         <time>2026-08-07</time>
         <p>今天傍晚倒完垃圾，看時間還早，就沿著河邊的散步道慢慢走。微風吹著，一邊健走一邊看河面，整個人都很輕盈，散步運動的舒暢感真的很舒服。 走著走著，就不自覺往旁邊的黃…</p>
+        <div class="post-tags"><span class="tag">生活與旅行</span></div>
         <a href="post.html?id=10" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="9" data-tags="人生覺察,職場與社會">
         <h3><a href="post.html?id=9">越忙越心慌？找回你的掌控感</a></h3>
         <time>2026-08-05</time>
         <p>你最近是不是常覺得「越忙越心慌」？常常半夜還在改檔案、常常腦袋轉不停，明明很努力，卻還是覺得自己不夠好。 其實你沒問題，只是環境的改變跟壓力把你的「掌控感」偷偷…</p>
+        <div class="post-tags"><span class="tag">人生覺察</span><span class="tag">職場與社會</span></div>
         <a href="post.html?id=9" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="8" data-tags="退休生活,家庭與人際">
         <h3><a href="post.html?id=8">半退休人生的人際經營智慧</a></h3>
         <time>2026-08-04</time>
         <p>半退休人生中，人際關係的經營不再是為了應酬或升遷，而是為了心靈的平安與生命的意義。現在整理出幾條最重要的實操觀念與行為： 1. **為自己而活**：時間有限，不…</p>
+        <div class="post-tags"><span class="tag">退休生活</span><span class="tag">家庭與人際</span></div>
         <a href="post.html?id=8" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="7" data-tags="財經">
         <h3><a href="post.html?id=7">2026 年 7 月台股史詩級震盪——暴跌原因與應對策略</a></h3>
         <time>2026-08-02</time>
         <p>：〔2026 年 7 月台股從四萬八千點高位重挫、險守四萬點的「史詩級震盪」。現在整理成三大類重點，一眼看懂為什麼會暴跌，以及接下來一個月該怎麼應對： ### …</p>
+        <div class="post-tags"><span class="tag">財經</span></div>
         <a href="post.html?id=7" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="6" data-tags="人生覺察">
         <h3><a href="post.html?id=6">人生的長度，長不過春夏秋冬</a></h3>
         <time>2026-08-02</time>
         <p>終有一天，我們會明白，大自然的規律：人生的長度，長不過春夏秋冬；人生的寬度，寬不過南北西東；人生的高度，高不過藍天白雲；人生的無常，無非是悲歡離合！ 人到了一定…</p>
+        <div class="post-tags"><span class="tag">人生覺察</span></div>
         <a href="post.html?id=6" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="5" data-tags="生活與旅行">
         <h3><a href="post.html?id=5">彰化鹿港暴雨奇遇記</a></h3>
         <time>2026-08-02</time>
         <p>昨天新聞報導彰化鹿港福興出現豪大雨大淹水，沒想到我竟然也親身經歷了這場暴雨奇遇！ 昨天我打算回去彰化鄉下老家一趟，我早上從台中出發，先搭捷運再轉火車，約早上9點…</p>
+        <div class="post-tags"><span class="tag">生活與旅行</span></div>
         <a href="post.html?id=5" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="4" data-tags="人生覺察">
         <h3><a href="post.html?id=4">分享影片：老話新解，重新聽聽，會有新的見解</a></h3>
         <time>2026-08-01</time>
         <p>分享一個很好的短片給大家： 📺 頻道：四弘小聲講 老話常說："聽，要重新聽聽，會有新的見解。" 很多時候我們以為自己懂了，其實只是用自己的框架去套。放下成見，…</p>
+        <div class="post-tags"><span class="tag">人生覺察</span></div>
         <a href="post.html?id=4" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="3" data-tags="生活與旅行">
         <h3><a href="post.html?id=3">分享影片：YouTube 影片</a></h3>
         <time>2026-07-31</time>
         <p>分享一個不錯的 YouTube 影片給大家： （請補充影片標題和簡介...）</p>
+        <div class="post-tags"><span class="tag">生活與旅行</span></div>
         <a href="post.html?id=3" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="2" data-tags="生活與旅行">
         <h3><a href="post.html?id=2">草悟道的午後，偷得半日閒</a></h3>
         <time>2026-07-31</time>
         <p>週六的早晨，陽光慵懶地灑在草悟道上。 說實在的，我本來只是想在附近逛逛，順手買杯咖啡，但走進草悟道的那一刻，突然覺得——啊，這大概就是台中人都懂的「都市 Oas…</p>
+        <div class="post-tags"><span class="tag">生活與旅行</span></div>
         <a href="post.html?id=2" class="read-more">閱讀更多 →</a>
       </article>
-      <article class="post-card">
+      <article class="post-card" data-id="1" data-tags="生活與旅行">
         <h3><a href="post.html?id=1">你好，世界！</a></h3>
         <time>2026-07-31</time>
         <p>这是我的第一篇部落格文章。欢迎来到我的个人空间！</p>
+        <div class="post-tags"><span class="tag">生活與旅行</span></div>
         <a href="post.html?id=1" class="read-more">閱讀更多 →</a>
       </article>
       <!-- POSTS:END -->
@@ -187,5 +220,6 @@
   <footer>
     <p>© 2026 新新生活思維</p>
   </footer>
+  <script src="search.js"></script>
 </body>
 </html>

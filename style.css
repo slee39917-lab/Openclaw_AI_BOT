@@ -169,3 +169,102 @@ footer {
   border-top: 1px solid #ddd;
   font-size: 0.95em;
 }
+
+/* ===== 搜尋與標籤（第二階段新增） ===== */
+.search-box {
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+}
+
+#search-input {
+  width: 100%;
+  font-size: 1.05em;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #333;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #f0a500;
+  box-shadow: 0 0 0 3px rgba(240,165,0,0.15);
+}
+
+.tag-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tag-btn {
+  display: inline-block;
+  padding: 9px 15px;
+  min-height: 40px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  border-radius: 20px;
+  font-size: 0.95em;
+  color: #555;
+  cursor: pointer;
+  line-height: 1.2;
+  font-family: inherit;
+}
+
+.tag-btn:hover {
+  border-color: #f0a500;
+  color: #f0a500;
+}
+
+.tag-btn.active {
+  background: #f0a500;
+  border-color: #f0a500;
+  color: #fff;
+}
+
+.result-count {
+  margin-top: 12px;
+  color: #888;
+  font-size: 0.92em;
+}
+
+.empty-state {
+  margin: 28px 0;
+  padding: 24px;
+  text-align: center;
+  color: #888;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.post-tags {
+  margin: 10px 0 4px;
+}
+
+.post-tags .tag {
+  display: inline-block;
+  padding: 4px 12px;
+  margin: 0 6px 6px 0;
+  background: #f4f1ec;
+  color: #8a7a5c;
+  border-radius: 14px;
+  font-size: 0.82em;
+  cursor: pointer;
+}
+
+.post-tags .tag:hover {
+  background: #ece5d8;
+}
+
+@media (max-width: 480px) {
+  header h1 a { font-size: 1.6em; }
+  .search-box { padding: 14px; }
+  .tag-btn { padding: 10px 14px; font-size: 0.92em; }
+}
