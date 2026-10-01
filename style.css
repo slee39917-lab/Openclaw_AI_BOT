@@ -383,7 +383,34 @@ footer {
   white-space: nowrap;
 }
 
+/* ===== 第四階段：留言（Giscus） ===== */
+.comments-section {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comments-section h3 {
+  font-size: 1.25em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.comments-hint {
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 16px;
+}
+
+.comments-section .giscus,
+.comments-section .giscus-frame {
+  width: 100%;
+}
+
 @media (max-width: 480px) {
+  .comments-section { padding: 14px; }
   .post-nav { flex-direction: column; }
   .post-nav .nav-link,
   .post-nav .nav-side-empty { max-width: 100%; }
