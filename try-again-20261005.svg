@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 室內牆面（傍晚，暖色） -->
+    <linearGradient id="wall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E9D6B8"/>
+      <stop offset="100%" style="stop-color:#D6BE9A"/>
+    </linearGradient>
+    <!-- 黃昏天空 -->
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#46507E"/>
+      <stop offset="42%" style="stop-color:#8A6C92"/>
+      <stop offset="70%" style="stop-color:#D98E6A"/>
+      <stop offset="100%" style="stop-color:#F2BE7E"/>
+    </linearGradient>
+    <!-- 木桌 -->
+    <linearGradient id="wood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D3A874"/>
+      <stop offset="100%" style="stop-color:#B0804E"/>
+    </linearGradient>
+    <!-- 螢幕微光 -->
+    <linearGradient id="screen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#CFEAF2"/>
+      <stop offset="100%" style="stop-color:#A9D3E6"/>
+    </linearGradient>
+    <!-- 檯燈暖光 -->
+    <radialGradient id="lampglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFE7AE;stop-opacity:0.85"/>
+      <stop offset="100%" style="stop-color:#FFE7AE;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="screenglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D6F0F8;stop-opacity:0.55"/>
+      <stop offset="100%" style="stop-color:#D6F0F8;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 牆面 -->
+  <rect x="0" y="0" width="800" height="400" fill="url(#wall)"/>
+
+  <!-- 窗戶 -->
+  <rect x="46" y="40" width="330" height="216" rx="10" fill="#EADFCB"/>
+  <rect x="58" y="52" width="306" height="192" rx="6" fill="url(#sky)"/>
+
+  <!-- 落日餘暉 -->
+  <circle cx="150" cy="196" r="30" fill="#FFD98A" opacity="0.85"/>
+  <ellipse cx="211" cy="212" rx="150" ry="40" fill="#FFC98A" opacity="0.25"/>
+
+  <!-- 城市天際線 -->
+  <path d="M58 214 L58 168 L86 168 L86 148 L112 148 L112 176 L140 176 L140 156 L166 156 L166 182 L196 182 L196 142 L222 142 L222 172 L252 172 L252 160 L284 160 L284 186 L318 186 L318 152 L346 152 L346 176 L364 176 L364 214 Z"
+        fill="#3B3552" opacity="0.92"/>
+  <!-- 樓房窗火 -->
+  <g fill="#FFD98A" opacity="0.9">
+    <rect x="94" y="176" width="5" height="6" rx="1"/>
+    <rect x="146" y="162" width="5" height="6" rx="1"/>
+    <rect x="204" y="176" width="5" height="6" rx="1"/>
+    <rect x="262" y="168" width="5" height="6" rx="1"/>
+    <rect x="326" y="182" width="5" height="6" rx="1"/>
+    <rect x="112" y="196" width="5" height="6" rx="1"/>
+    <rect x="222" y="192" width="5" height="6" rx="1"/>
+  </g>
+
+  <!-- 街道車燈 -->
+  <g opacity="0.95">
+    <rect x="86" y="222" width="26" height="4" rx="2" fill="#FFF0C4"/>
+    <circle cx="84" cy="224" r="3.4" fill="#FFF0C4"/>
+    <rect x="150" y="228" width="22" height="4" rx="2" fill="#FF8A73"/>
+    <circle cx="174" cy="230" r="3.4" fill="#FF8A73"/>
+    <rect x="250" y="220" width="24" height="4" rx="2" fill="#FFF0C4"/>
+    <circle cx="248" cy="222" r="3.4" fill="#FFF0C4"/>
+    <rect x="316" y="230" width="20" height="4" rx="2" fill="#FF8A73"/>
+    <circle cx="338" cy="232" r="3.4" fill="#FF8A73"/>
+  </g>
+
+  <!-- 窗框十字 -->
+  <rect x="58" y="146" width="306" height="7" fill="#EADFCB"/>
+  <rect x="207" y="52" width="7" height="192" fill="#EADFCB"/>
+
+  <!-- 桌面 -->
+  <rect x="0" y="300" width="800" height="100" fill="url(#wood)"/>
+  <rect x="0" y="300" width="800" height="9" fill="#E0B884"/>
+
+  <!-- 桌上物件的柔影 -->
+  <ellipse cx="150" cy="306" rx="70" ry="10" fill="#8A6035" opacity="0.25"/>
+  <ellipse cx="560" cy="306" rx="90" ry="11" fill="#8A6035" opacity="0.22"/>
+
+  <!-- 檯燈暖光暈 -->
+  <circle cx="690" cy="150" r="150" fill="url(#lampglow)"/>
+
+  <!-- 筆記型電腦（螢幕朝內，背面朝觀眾側邊） -->
+  <g transform="translate(430,196)">
+    <!-- 螢幕發光 -->
+    <rect x="-30" y="-6" width="220" height="120" fill="#E6EFE4" opacity="0.0"/>
+    <!-- 螢幕 -->
+    <rect x="-6" y="0" width="206" height="112" rx="8" fill="#DAD5CB"/>
+    <rect x="2" y="8" width="190" height="96" rx="4" fill="url(#screen)"/>
+    <!-- 螢幕內容線 -->
+    <g fill="#7FB6C9" opacity="0.85">
+      <rect x="16" y="22" width="120" height="7" rx="3"/>
+      <rect x="16" y="40" width="160" height="7" rx="3"/>
+      <rect x="16" y="58" width="140" height="7" rx="3"/>
+      <rect x="16" y="76" width="96" height="7" rx="3"/>
+    </g>
+    <rect x="16" y="88" width="46" height="10" rx="5" fill="#E8A56E"/>
+    <!-- 底座 -->
+    <path d="M-24 112 L224 112 L236 128 L-36 128 Z" fill="#C9C3B8"/>
+  </g>
+
+  <!-- 螢幕微光灑出 -->
+  <ellipse cx="530" cy="240" rx="150" ry="70" fill="url(#screenglow)"/>
+
+  <!-- 茶杯 -->
+  <g transform="translate(232,268)">
+    <ellipse cx="0" cy="42" rx="34" ry="9" fill="#C9A06A" opacity="0.5"/>
+    <!-- 杯身 -->
+    <path d="M-30 8 L30 8 L25 40 Q0 46 -25 40 Z" fill="#FBFBF7"/>
+    <path d="M-24 14 L24 14 L20 36 Q0 41 -20 36 Z" fill="#E8B876"/>
+    <!-- 杯耳 -->
+    <path d="M30 14 Q52 20 44 34 Q38 42 30 38" fill="none" stroke="#FBFBF7" stroke-width="6"/>
+    <!-- 茶面 -->
+    <ellipse cx="0" cy="9" rx="30" ry="7" fill="#D9A45B"/>
+    <!-- 熱氣 -->
+    <path d="M-8 4 Q-14 -8 -6 -16 Q2 -24 -4 -34" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" opacity="0.75"/>
+    <path d="M8 4 Q2 -6 10 -14 Q16 -22 10 -32" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" opacity="0.55"/>
+  </g>
+
+  <!-- 書與筆 -->
+  <g transform="translate(70,272)">
+    <rect x="0" y="0" width="88" height="34" rx="3" fill="#B7C7A8"/>
+    <rect x="0" y="0" width="88" height="9" rx="3" fill="#9FB48E"/>
+    <rect x="8" y="14" width="60" height="4" rx="2" fill="#EAF0E2"/>
+    <rect x="8" y="22" width="44" height="4" rx="2" fill="#EAF0E2"/>
+  </g>
+
+  <!-- 檯燈 -->
+  <g transform="translate(690,300)">
+    <!-- 燈座 -->
+    <ellipse cx="0" cy="-4" rx="34" ry="9" fill="#6B5A44"/>
+    <ellipse cx="0" cy="-8" rx="34" ry="9" fill="#8A7355"/>
+    <!-- 燈桿 -->
+    <path d="M0 -10 L-6 -70 L10 -86" fill="none" stroke="#6B5A44" stroke-width="7" stroke-linecap="round"/>
+    <!-- 燈罩 -->
+    <path d="M-30 -96 L30 -96 L20 -70 L-20 -70 Z" fill="#E8A56E"/>
+    <path d="M-30 -96 L30 -96 L22 -88 L-22 -88 Z" fill="#D08C55"/>
+    <!-- 燈泡暖光 -->
+    <ellipse cx="0" cy="-70" rx="14" ry="6" fill="#FFF0C4"/>
+  </g>
+</svg>
