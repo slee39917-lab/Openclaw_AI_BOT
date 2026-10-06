@@ -1,5 +1,15 @@
 [
   {
+    "id": 34,
+    "title": "分享影片｜秋紅谷在台中，紅橋，紅色的橋，美得像畫一樣",
+    "date": "2026-10-06",
+    "tags": [
+      "分享影片",
+      "生活與旅行"
+    ],
+    "content": "<div class=\"video-embed\"><iframe src=\"https://www.youtube-nocookie.com/embed/CjU_t29GOg0\" title=\"秋紅谷在台中，紅橋，紅色的橋，美得像畫一樣\" loading=\"lazy\" frameborder=\"0\" allow=\"accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe></div>\n\n<p>這是一支我想分享給大家看的 YouTube 影片。</p>"
+  },
+  {
     "id": 33,
     "title": "本來想讓 AI 幫我做事，結果我都在教 AI 做事",
     "date": "2026-10-06",
