@@ -1,5 +1,15 @@
 [
   {
+    "id": 38,
+    "title": "分享影片｜日常的記錄，轉角的驚喜",
+    "date": "2026-10-14",
+    "tags": [
+      "分享影片",
+      "生活與旅行"
+    ],
+    "content": "<div class=\"video-embed\"><iframe src=\"https://www.youtube-nocookie.com/embed/Y8_89DiDiHE\" title=\"日常的記錄，轉角的驚喜\" loading=\"lazy\" frameborder=\"0\" allow=\"accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe></div>\n\n<p>這是一支我想分享給大家看的 YouTube 影片。</p>"
+  },
+  {
     "id": 37,
     "title": "生活雜記：租金喊到 120 萬，最後自己砍到 70 萬",
     "date": "2026-10-14",
